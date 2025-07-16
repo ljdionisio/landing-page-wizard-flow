@@ -27,39 +27,77 @@ type AppAction =
   | { type: 'SET_CURRENT_STEP'; payload: 'input' | 'preview' | 'published' }
   | { type: 'RESET_STATE' };
 
-const initialState: AppState = {
-  productData: {
-    productName: '',
-    productDescription: '',
-    productPrice: '',
-    productImage: '',
-    checkoutLink: '',
-    benefits: [],
-    testimonials: [],
-    guarantee: '',
-    scarcity: '',
-    bonuses: []
-  },
-  selectedTemplate: null,
-  publishedUrl: '',
-  currentStep: 'input'
+// Função para carregar estado do localStorage
+const loadFromStorage = (): AppState => {
+  try {
+    const savedState = localStorage.getItem('landFacilState');
+    if (savedState) {
+      return JSON.parse(savedState);
+    }
+  } catch (error) {
+    console.error('Erro ao carregar estado do localStorage:', error);
+  }
+  
+  return {
+    productData: {
+      productName: '',
+      productDescription: '',
+      productPrice: '',
+      productImage: '',
+      checkoutLink: '',
+      benefits: [],
+      testimonials: [],
+      guarantee: '',
+      scarcity: '',
+      bonuses: []
+    },
+    selectedTemplate: null,
+    publishedUrl: '',
+    currentStep: 'input'
+  };
 };
 
+// Função para salvar estado no localStorage
+const saveToStorage = (state: AppState) => {
+  try {
+    localStorage.setItem('landFacilState', JSON.stringify(state));
+  } catch (error) {
+    console.error('Erro ao salvar estado no localStorage:', error);
+  }
+};
+
+const initialState: AppState = loadFromStorage();
+
 const appReducer = (state: AppState, action: AppAction): AppState => {
+  let newState: AppState;
+  
   switch (action.type) {
     case 'SET_PRODUCT_DATA':
-      return { ...state, productData: action.payload };
+      newState = { ...state, productData: action.payload };
+      break;
     case 'SET_SELECTED_TEMPLATE':
-      return { ...state, selectedTemplate: action.payload };
+      newState = { ...state, selectedTemplate: action.payload };
+      break;
     case 'SET_PUBLISHED_URL':
-      return { ...state, publishedUrl: action.payload };
+      newState = { ...state, publishedUrl: action.payload };
+      break;
     case 'SET_CURRENT_STEP':
-      return { ...state, currentStep: action.payload };
+      newState = { ...state, currentStep: action.payload };
+      break;
     case 'RESET_STATE':
-      return initialState;
+      newState = loadFromStorage();
+      localStorage.removeItem('landFacilState');
+      return newState;
     default:
-      return state;
+      newState = state;
   }
+  
+  // Salvar no localStorage sempre que houver mudanças
+  if (newState !== state) {
+    saveToStorage(newState);
+  }
+  
+  return newState;
 };
 
 interface AppContextType {
