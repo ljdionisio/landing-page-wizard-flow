@@ -1,73 +1,134 @@
-# Welcome to your Lovable project
+# Land Facil Dionisio 🚀
 
-## Project info
+Uma plataforma inovadora para criação de landing pages de alta conversão usando inteligência artificial.
 
-**URL**: https://lovable.dev/projects/e398a2d9-724a-4ffc-9ea2-44dc15e56006
+## 🌟 Sobre o Projeto
 
-## How can I edit this code?
+**Land Facil Dionisio** é uma aplicação que permite criar landing pages profissionais em minutos. Basta inserir os dados do seu produto e nossa IA gera 3 templates únicos e otimizados para conversão.
 
-There are several ways of editing your application.
+**URL do Projeto**: https://lovable.dev/projects/e398a2d9-724a-4ffc-9ea2-44dc15e56006
 
-**Use Lovable**
+## ✨ Funcionalidades
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/e398a2d9-724a-4ffc-9ea2-44dc15e56006) and start prompting.
+- **Geração Automática**: 3 templates profissionais gerados automaticamente
+- **Alta Conversão**: Páginas otimizadas para maximizar vendas
+- **Publicação Instantânea**: Publique e compartilhe imediatamente
+- **Design Responsivo**: Templates adaptados para todos os dispositivos
+- **Gerenciamento de Estado**: Fluxo de dados otimizado entre páginas
 
-Changes made via Lovable will be committed automatically to this repo.
+## 🛠️ Tecnologias Utilizadas
 
-**Use your preferred IDE**
+- **React 18** - Framework principal
+- **TypeScript** - Tipagem estática
+- **Vite** - Build tool moderna
+- **Tailwind CSS** - Styling
+- **shadcn-ui** - Componentes UI
+- **Lucide React** - Ícones
+- **React Router** - Navegação
+- **React Query** - Gerenciamento de estado
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 🏗️ Estrutura do Projeto
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+```
+src/
+├── components/
+│   ├── ui/              # Componentes shadcn
+│   └── templates/       # Templates de landing pages
+│       ├── Template1.tsx
+│       ├── Template2.tsx
+│       └── Template3.tsx
+├── context/
+│   └── AppContext.tsx   # Gerenciamento de estado global
+├── pages/
+│   ├── Dashboard.tsx    # Formulário de entrada
+│   ├── Preview.tsx      # Visualização dos templates
+│   └── Published.tsx    # Página publicada
+├── assets/              # Imagens e recursos
+└── hooks/               # Custom hooks
+```
 
-Follow these steps:
+## 🚀 Como Usar
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
+1. **Acesse a aplicação** no dashboard principal
+2. **Preencha os dados** do seu produto no formulário
+3. **Visualize os templates** gerados pela IA
+4. **Escolha seu favorito** e publique instantaneamente
+5. **Compartilhe** sua landing page com o mundo
+
+## 💻 Desenvolvimento Local
+
+**Usando Lovable (Recomendado)**
+
+Acesse [Lovable Project](https://lovable.dev/projects/e398a2d9-724a-4ffc-9ea2-44dc15e56006) e comece a editar.
+
+**Usando seu IDE favorito**
+
+```bash
+# 1. Clone o repositório
 git clone <YOUR_GIT_URL>
 
-# Step 2: Navigate to the project directory.
+# 2. Navegue para o diretório
 cd <YOUR_PROJECT_NAME>
 
-# Step 3: Install the necessary dependencies.
+# 3. Instale as dependências
 npm i
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# 4. Inicie o servidor de desenvolvimento
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## 🎨 Design System
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+O projeto utiliza um design system completo com:
 
-**Use GitHub Codespaces**
+- **Cores**: Gradientes roxo e dourado
+- **Tipografia**: Hierarquia visual otimizada
+- **Componentes**: Reutilizáveis e customizáveis
+- **Animations**: Transições suaves
+- **Responsividade**: Mobile-first
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 🔧 Configuração
 
-## What technologies are used for this project?
+### Variáveis de Design
 
-This project is built with:
+As cores e estilos estão definidos em:
+- `src/index.css` - CSS custom properties
+- `tailwind.config.ts` - Configuração do Tailwind
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Contexto da Aplicação
 
-## How can I deploy this project?
+O estado global é gerenciado por:
+- `AppContext.tsx` - Gerenciamento de estado
+- React Context API
+- Reducer pattern
 
-Simply open [Lovable](https://lovable.dev/projects/e398a2d9-724a-4ffc-9ea2-44dc15e56006) and click on Share -> Publish.
+## 📦 Deploy
 
-## Can I connect a custom domain to my Lovable project?
+**Via Lovable**
 
-Yes, you can!
+1. Acesse [Lovable](https://lovable.dev/projects/e398a2d9-724a-4ffc-9ea2-44dc15e56006)
+2. Clique em **Share** → **Publish**
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+**Domínio Customizado**
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Para conectar um domínio personalizado:
+1. Vá em **Project** → **Settings** → **Domains**
+2. Clique em **Connect Domain**
+
+[Guia completo](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+
+## 🤝 Contribuindo
+
+1. Faça um fork do projeto
+2. Crie uma branch para sua feature
+3. Commit suas mudanças
+4. Push para a branch
+5. Abra um Pull Request
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT.
+
+---
+
+**Desenvolvido com ❤️ por Land Facil Dionisio**
